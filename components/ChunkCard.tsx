@@ -25,15 +25,15 @@ export const ChunkCard: React.FC<ChunkCardProps> = ({ chunk, index, onRemove, on
             case 'finished':
                  if (!chunk.audioUrl) return null;
                 return (
-                    <div className="relative group mt-2">
-                        <audio controls controlsList="nodownload" src={chunk.audioUrl} className="w-full h-8">
+                    <div className="mt-2 flex items-center gap-2">
+                        <audio controls controlsList="nodownload" src={chunk.audioUrl} className="w-full h-8 flex-grow">
                             Your browser does not support the audio element.
                         </audio>
                         <a
                             href={chunk.audioUrl}
                             download={`chunk_${index + 1}.mp3`}
                             title="Download chunk"
-                            className="absolute right-2 top-1/2 -translate-y-1/2 transition-opacity flex-shrink-0 inline-flex items-center justify-center p-2 rounded-full text-gray-500 bg-transparent hover:bg-gray-200 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="flex-shrink-0 inline-flex items-center justify-center p-2 rounded-full text-gray-500 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
                         >
                             <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
